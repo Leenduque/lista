@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(83, 83, 107);
+    display:grid;
+    place-items: center ;
+
+
+}
+p{
+    font-size: 30px;
+}
