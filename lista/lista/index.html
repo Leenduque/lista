@@ -1,36 +1,103 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
     <head>
-        <title>lista</title>
-        <link rel="stylesheet" href="style.css">
+        <title>lista 1</title>
+        <style>
+            li{
+                font-size: 25px;
+            }
+            body{
+                background-color: pink;
+            }
+
+            .lista{
+                width: 45%;
+                background-color: brown;
+                color: rgb(231, 223, 223);
+                padding: 5px;
+                border-radius: 30px;
+                border: 3px solid rgb(71, 26, 26);
+                display: grid;
+                place-items: center;
+            }
+            .lista2{
+                width: 45%;
+                background-color: brown;
+                padding: 5px;
+                border-radius: 30px;
+                color: rgb(231, 223, 223);
+                border: 3px solid rgb(71, 26, 26);
+                display: grid;
+                place-items: center;
+            }
+            .container{
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
     </head>
     <body>
-      <p>lista de tarefas</p>  
-      <ul>
-          <li>biografia</li>
-          <li>people</li>  
-      </ul>
-      <input>
-      <button onclick="add()">ADICIONAR</button>
+        
+        <div class="container">
+            <div class="lista"> 
+                <h1>Tarefas</h1>
+                <input id="l1" >
+                <button onclick="add()">mais</button>
+                <ul id="lista1">
+                    <li>html</li>
+                </ul>
+            </div>
+     
+
+            <div class="lista2">
+                <h1>Tarefas</h1>
+                <input id="l2">
+                <button onclick="adt()">mais</button>
+                <ul id="lista2">
+                    <li>css</li>
+                </ul >
+            </div>
+        </div>
+    
     <script>
-        
+    
         function add() {
-          const ul = document.querySelector("ul")
-          const input = document.querySelector("input")
-          const tarefa = input.value 
+            const ul = document.getElementById('lista1')
+            const input = document.getElementById('l1')
+            const tarefa = input.value
 
-          const li = document.createElement("li")
-          li.innerText = tarefa 
-          ul.appendChild(li)
+            const li = document.createElement("li")
+            li.innerText = tarefa 
+            ul.appendChild(li)
+            input.value = ""
+            
+            
 
-          input.value = ""
+            console.log()
+        }
+
+       function adt() {
+            const ul = document.getElementById("lista2")
+            const input = document.getElementById("l2")
+            const tarefa = input.value
+
+            const li = document.createElement("li")
+            li.innerText = tarefa
+            ul.appendChild(li)
+            input.value = ""
+
+            const ap = document.createElement("button")
+            ap.innerText = "remover"
+            
+            
+        }
+
         
 
+        
+        
 
-         
-
-        } 
+        
     </script>
     </body>
-    
 </html>
