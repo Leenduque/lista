@@ -1,103 +1,51 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>lista 1</title>
-        <style>
-            li{
-                font-size: 25px;
-            }
-            body{
-                background-color: pink;
-            }
 
-            .lista{
-                width: 45%;
-                background-color: brown;
-                color: rgb(231, 223, 223);
-                padding: 5px;
-                border-radius: 30px;
-                border: 3px solid rgb(71, 26, 26);
-                display: grid;
-                place-items: center;
-            }
-            .lista2{
-                width: 45%;
-                background-color: brown;
-                padding: 5px;
-                border-radius: 30px;
-                color: rgb(231, 223, 223);
-                border: 3px solid rgb(71, 26, 26);
-                display: grid;
-                place-items: center;
-            }
-            .container{
-                display: flex;
-                justify-content: space-between;
-            }
-        </style>
+    <head>
+
     </head>
     <body>
-        
-        <div class="container">
-            <div class="lista"> 
-                <h1>Tarefas</h1>
-                <input id="l1" >
-                <button onclick="add()">mais</button>
-                <ul id="lista1">
-                    <li>html</li>
-                </ul>
-            </div>
-     
+        <h1>TAREAS</h1>
+        <input>
+        <button onclick="add()">Adicionar</button>
+        <ul>
+            <li></li> 
+        </ul>
 
-            <div class="lista2">
-                <h1>Tarefas</h1>
-                <input id="l2">
-                <button onclick="adt()">mais</button>
-                <ul id="lista2">
-                    <li>css</li>
-                </ul >
-            </div>
-        </div>
-    
-    <script>
-    
-        function add() {
-            const ul = document.getElementById('lista1')
-            const input = document.getElementById('l1')
-            const tarefa = input.value
+        <script>
 
-            const li = document.createElement("li")
-            li.innerText = tarefa 
-            ul.appendChild(li)
-            input.value = ""
+            function add(){
+                const ul = document.querySelector("ul")
+                const input = document.querySelector("input")
+                const tarefa = input.value 
+                
+                if (tarefa === "" ) {
+                    alert("Você precisa digitar uma nova tarefa");
+                    return;
+                }
+                const li = document.createElement("li")
+                li.innerText = tarefa 
+                ul.appendChild(li)
+
+                const botaoApagar = document.createElement("button");
+                botaoApagar.textContent = "Apagar";
+                botaoApagar.className = "apagar";
+                botaoApagar.onclick = function () {
+                li.remove(); // remove o item da lista
+      };
+
+      // Adicionar o botão ao item da lista
+      li.appendChild(botaoApagar);
+
+
+
+
+
+                input.value = ""
+            }
+
             
             
-
-            console.log()
-        }
-
-       function adt() {
-            const ul = document.getElementById("lista2")
-            const input = document.getElementById("l2")
-            const tarefa = input.value
-
-            const li = document.createElement("li")
-            li.innerText = tarefa
-            ul.appendChild(li)
-            input.value = ""
-
-            const ap = document.createElement("button")
-            ap.innerText = "remover"
-            
-            
-        }
-
-        
-
-        
-        
-
-        
-    </script>
+        </script>
     </body>
 </html>
