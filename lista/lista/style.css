@@ -8,3 +8,16 @@ body{
 p{
     font-size: 30px;
 }
+
+button {
+    font-size: 20px;
+    background-color: gray;
+}
+
+input {
+    padding: 10px;
+}
+
+li{
+    font-size: 20px;
+}
